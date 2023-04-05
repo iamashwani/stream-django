@@ -1,0 +1,24 @@
+<!-- templates/register.html -->
+
+{% extends 'streams/base.html' %}
+
+{% block content %}
+  <h2>Register</h2>
+  {% if error %}
+    <p class="error">{{ error }}</p>
+  {% endif %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>Username:</label>
+    <input type="text" name="username" required><br><br>
+    <label>Password:</label>
+    <input type="password" name="password" required><br><br>
+    <label>Confirm password:</label>
+    <input type="password" name="password_confirm" required><br><br>
+    <label>Bio:</label>
+    <textarea name="bio"></textarea><br><br>
+    <label>Profile image:</label>
+    <input type="file" name="profile_image"><br><br>
+    <button type="submit">Register</button>
+  </form>
+{% endblock %}

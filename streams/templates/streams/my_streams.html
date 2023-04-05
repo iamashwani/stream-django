@@ -1,0 +1,12 @@
+<!-- streams/my_streams.html -->
+{% extends 'streams/base.html' %}
+
+{% block content %}
+
+<h1>My live streams</h1>
+<ul>
+{% for stream in streams %}
+  <li><a href="{% url 'view_stream' stream.id %}">{{ stream.name }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

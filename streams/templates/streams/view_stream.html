@@ -1,0 +1,13 @@
+<!-- streams/view_stream.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ stream.name }}</h1>
+<p>{{ stream.description }}</p>
+
+<video id="player" controls autoplay>
+  <source src="{% url 'live_stream' stream.id %}" type="application/x-mpegURL">
+</video>
+
+{% endblock %}
