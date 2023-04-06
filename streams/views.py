@@ -78,10 +78,17 @@ def user_logout(request):
     logout(request)
     return redirect('user_login')
 
+# live stream
+@csrf_exempt
+@login_required
+def liveSt(request):
+    
+
+    return render(request, 'streams/livestream.html')
+
+
 
 #user registration
-
-
 @csrf_exempt
 def user_signup(request):
     if request.method == 'POST':

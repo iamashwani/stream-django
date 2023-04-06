@@ -1,0 +1,17 @@
+{% extends 'streams/base.html' %}
+
+
+
+{% block content %}
+    <h1>Live Stream</h1>
+    <div id="live-stream"></div>
+    <script>
+        {% comment %} debugger {% endcomment %}
+        var socket = new WebSocket("ws://" + window.location.host + "/ws/live/");
+
+        socket.onmessage = function(event) {
+            var message = event.data;
+            // handle the message as needed
+        };
+    </script>
+{% endblock %}

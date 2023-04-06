@@ -12,6 +12,7 @@ urlpatterns = [
     path('my_streams/', views.view_my_streams, name='view_my_streams'),
     path('', views.user_login, name='user_login'),
     path('logout/', views.user_logout, name='user_logout'),
+    path('ws/live/', views.liveSt, name='live'),
     path('signup/', views.user_signup, name='user_signup'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
